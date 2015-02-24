@@ -40,6 +40,7 @@
 		27BCF6881A97F30A006355C0 /* pushtestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pushtestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BCF68D1A97F30A006355C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27BCF68E1A97F30A006355C0 /* pushtestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pushtestTests.m; sourceTree = "<group>"; };
+		27C511941A9BECF9001227E8 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 		27BCF6661A97F309006355C0 = {
 			isa = PBXGroup;
 			children = (
+				27C511941A9BECF9001227E8 /* PushKit.framework */,
 				27BCF6711A97F309006355C0 /* pushtest */,
 				27BCF68B1A97F30A006355C0 /* pushtestTests */,
 				27BCF6701A97F309006355C0 /* Products */,
@@ -168,6 +170,11 @@
 				TargetAttributes = {
 					27BCF66E1A97F309006355C0 = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					27BCF6871A97F30A006355C0 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -343,9 +350,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = pushtest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "89f8075f-1de3-4965-89bf-972dd33abc7c";
 			};
 			name = Debug;
 		};
@@ -356,6 +365,7 @@
 				INFOPLIST_FILE = pushtest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "89f8075f-1de3-4965-89bf-972dd33abc7c";
 			};
 			name = Release;
 		};
@@ -412,6 +422,7 @@
 				27BCF6941A97F30A006355C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27BCF6951A97F30A006355C0 /* Build configuration list for PBXNativeTarget "pushtestTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +431,7 @@
 				27BCF6971A97F30A006355C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
