@@ -27,8 +27,10 @@
 }
 
 - (void)showMsg:(NSNotification*)notification {
-    NSString *msg = [notification object];
-    self.textview.text = msg;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *msg = [notification object];
+        [self.textview replaceRange:self.textview.selectedTextRange withText:msg];
+    });
 }
 
 @end

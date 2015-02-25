@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276202051A9E472400451C80 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C511941A9BECF9001227E8 /* PushKit.framework */; };
 		27BCF6751A97F309006355C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BCF6741A97F309006355C0 /* main.m */; };
 		27BCF6781A97F309006355C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BCF6771A97F309006355C0 /* AppDelegate.m */; };
 		27BCF67B1A97F309006355C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BCF67A1A97F309006355C0 /* ViewController.m */; };
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276202051A9E472400451C80 /* PushKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +356,7 @@
 				INFOPLIST_FILE = pushtest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "89f8075f-1de3-4965-89bf-972dd33abc7c";
+				PROVISIONING_PROFILE = "76272eac-8da1-417d-97e1-71f763beccf9";
 			};
 			name = Debug;
 		};
@@ -365,7 +367,7 @@
 				INFOPLIST_FILE = pushtest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "89f8075f-1de3-4965-89bf-972dd33abc7c";
+				PROVISIONING_PROFILE = "76272eac-8da1-417d-97e1-71f763beccf9";
 			};
 			name = Release;
 		};
