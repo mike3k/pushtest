@@ -120,7 +120,7 @@ static const NSString * base_url = @"http://7f03b67ca2c84eec8ba0c3d550e74b99.clo
     
     UIMutableUserNotificationAction *action1;
     action1 = [[UIMutableUserNotificationAction alloc] init];
-    [action1 setActivationMode:UIUserNotificationActivationModeBackground];
+    [action1 setActivationMode:UIUserNotificationActivationModeForeground];
     [action1 setTitle:@"Accept"];
     [action1 setIdentifier:@"Accept"];
     [action1 setDestructive:NO];
@@ -137,8 +137,8 @@ static const NSString * base_url = @"http://7f03b67ca2c84eec8ba0c3d550e74b99.clo
     UIMutableUserNotificationCategory *actionCategory;
     actionCategory = [[UIMutableUserNotificationCategory alloc] init];
     [actionCategory setIdentifier:@"Actionable_notification"];
-    [actionCategory setActions:@[action1, action2]
-                    forContext:UIUserNotificationActionContextDefault];
+    [actionCategory setActions:@[action1, action2] forContext:UIUserNotificationActionContextDefault];
+    [actionCategory setActions:@[action1,action2] forContext:UIUserNotificationActionContextMinimal];
     
     NSSet *categories = [NSSet setWithObject:actionCategory];
     
@@ -205,6 +205,26 @@ static const NSString * base_url = @"http://7f03b67ca2c84eec8ba0c3d550e74b99.clo
                                           cancelButtonTitle: @"OK"
                                           otherButtonTitles:nil, nil];
     [alert show];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier
+                                                       forLocalNotification:(UILocalNotification *)notification
+                                                          completionHandler:(void (^)())completionHandler {
+    
+    NSString *msg = [NSString stringWithFormat:@"received action %@",identifier];
+    [self showMsg:msg];
+ 
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Action"
+                                                    message:msg
+                                                   delegate:nil
+                                          cancelButtonTitle: @"OK"
+                                          otherButtonTitles:nil, nil];
+    [alert show];
+
+    if (nil != completionHandler) {
+        completionHandler();
+    }
+    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
